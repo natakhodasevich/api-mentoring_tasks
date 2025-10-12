@@ -12,4 +12,14 @@ public class ColorEntityReads {
         List<ColorDataResponse> colors = colorEntityReadsService.getAllColors();
         return colors.stream().map(ColorDataResponse::getYear).toList();
     }
+
+    public List<String> getAllColorNamesFromColors() {
+        List<ColorDataResponse> colors = colorEntityReadsService.getAllColors();
+        return colors.stream().map(ColorDataResponse::getColor).toList();
+    }
+
+    public List<String> getAllPantoneValuesFromColors() {
+        List<ColorDataResponse> colors = colorEntityReadsService.getAllColors();
+        return colors.stream().map(ColorDataResponse::getPantone_value).toList();
+    }
 }

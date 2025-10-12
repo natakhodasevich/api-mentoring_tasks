@@ -96,6 +96,7 @@ public class PayloadEntityReadsUtil {
             List<T> jsonResponse = getResponse()
                     .then()
                     .statusCode(200)
+                    .log().all()
                     .extract()
                     .body().jsonPath().getList(path, clazz);
 

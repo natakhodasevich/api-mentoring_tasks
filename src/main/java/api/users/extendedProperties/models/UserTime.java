@@ -1,4 +1,4 @@
-package api;
+package api.users.extendedProperties.models;
 
 public class UserTime {
 

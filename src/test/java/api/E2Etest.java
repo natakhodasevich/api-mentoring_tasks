@@ -1,18 +1,12 @@
 package api;
 
-import io.restassured.http.ContentType;
-import org.testng.Assert;
+import api.users.extendedProperties.models.UserTime;
 import org.testng.annotations.Test;
 
-import java.time.Clock;
-import java.util.Arrays;
-import java.util.List;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 import static api.Specification.*;
 import static io.restassured.RestAssured.given;
-import static org.testng.Assert.*;
 
 public class E2Etest {
 

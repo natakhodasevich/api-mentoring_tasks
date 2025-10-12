@@ -1,4 +1,4 @@
-package api;
+package api.users.commands.models;
 
 public class UserRegisterRequest {
 

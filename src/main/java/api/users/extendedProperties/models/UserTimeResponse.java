@@ -1,6 +1,6 @@
-package api;
+package api.users.extendedProperties.models;
 
-public class UserTimeResponse extends UserTime{
+public class UserTimeResponse extends UserTime {
 
 
     private String updatedAt;
