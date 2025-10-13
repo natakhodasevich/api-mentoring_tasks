@@ -1,8 +1,6 @@
 package api;
-import api.users.commands.models.UserRegisterRequest;
-import api.users.commands.models.UserRegisterResponse;
-import api.users.extendedProperties.models.UserTime;
-import api.users.extendedProperties.models.UserTimeResponse;
+import api.usersApp.extendedProperties.models.UserTime;
+import api.usersApp.extendedProperties.models.UserTimeResponse;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -11,7 +9,7 @@ import java.time.Clock;
 import static io.restassured.RestAssured.given;
 
 public class ReqResTest {
-
+    //TODO not ready yet
     private final static String url = "https://reqres.in";
 
     @Test
@@ -22,7 +20,7 @@ public class ReqResTest {
         given()
                 .header("x-api-key", "reqres-free-v1")
                 .when()
-                .delete("/api/users/2")
+                .delete("/api/usersApp/2")
                 .then().log().all();
     }
 
@@ -37,7 +35,7 @@ public class ReqResTest {
                 .header("x-api-key", "reqres-free-v1")
                 .body(userTime)
                 .when()
-                .put("/api/users/2")
+                .put("/api/usersApp/2")
                 .then().log().all()
                 .extract().as(UserTimeResponse.class);
 

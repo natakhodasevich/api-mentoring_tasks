@@ -1,6 +1,5 @@
 package core.utils;
 
-import api.colors.entityReads.models.ColorDataResponse;
 import core.RetryCaller;
 import io.restassured.common.mapper.TypeRef;
 import io.restassured.http.ContentType;

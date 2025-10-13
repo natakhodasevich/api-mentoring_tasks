@@ -6,6 +6,9 @@ import java.util.Properties;
 
 public class PropertiesLoader {
     private static final String CONFIG_FILE = "api.properties";
+    private static final String USERS_FILE = "users.properties";
+    private static final String MESSAGES_FILE = "messages.properties";
+
     private static final Properties properties = new Properties();
     private static PropertiesLoader instance = null;
 
@@ -14,6 +17,12 @@ public class PropertiesLoader {
             properties.load(this.getClass()
                     .getClassLoader()
                     .getResourceAsStream(CONFIG_FILE));
+            properties.load(this.getClass()
+                    .getClassLoader()
+                    .getResourceAsStream(USERS_FILE));
+            properties.load(this.getClass()
+                    .getClassLoader()
+                    .getResourceAsStream(MESSAGES_FILE));
         } catch (IOException ex) {
           //  throw new SuvodaApiFrameworkException("Something went wrong while trying to load properties file. Error: ", ex);
         }

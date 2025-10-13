@@ -1,6 +1,6 @@
 package api;
 
-import api.users.extendedProperties.models.UserTime;
+import api.usersApp.extendedProperties.models.UserTime;
 import org.testng.annotations.Test;
 
 import java.util.logging.Logger;
@@ -11,7 +11,7 @@ import static io.restassured.RestAssured.given;
 public class E2Etest {
 
     private static final Logger logger = Logger.getLogger("Logger");
-
+    //TODO not ready yet
     @Test
     public void userFlowTest() {
 
@@ -24,7 +24,7 @@ public class E2Etest {
                 .body(userTime)
                 .header("x-api-key", "reqres-free-v1")
                 .when()
-                .post("/api/users")
+                .post("/api/usersApp")
                 .then().log().all()
                 .extract().as(UserCreateResponse.class);
         //
@@ -33,7 +33,7 @@ public class E2Etest {
         GetUserResponse getUserResponse = (GetUserResponse) given()
                 .header("x-api-key", "reqres-free-v1")
                 .when()
-                .get("/api/users?page=2")
+                .get("/api/usersApp")
                 .then().log().all()
                 .extract().body().jsonPath().getList("data", GetUserResponse.class);
 
