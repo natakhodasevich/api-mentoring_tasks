@@ -1,13 +1,14 @@
 package api.usersApp;
 
+import api.BaseTest;
 import api.usersApp.commands.models.UnSuccessUserRegisterResponse;
 import api.usersApp.commands.models.UserRegisterRequest;
 import api.usersApp.commands.service.UserCommandsService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 
 import static core.utils.PropertiesLoader.getPropertyByKey;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import core.ReportSaver;
 import io.restassured.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,7 +16,9 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class UserRegisterSuccessTest {
+import java.io.IOException;
+
+public class UserRegisterSuccessTest extends BaseTest {
 
     private static final String USERNAME = getPropertyByKey("VALID_USERNAME");
     private static final String PASSWORD = getPropertyByKey("VALID_PASSWORD");
@@ -29,13 +32,15 @@ public class UserRegisterSuccessTest {
     }
 
     @Test
-    public void successRegister() throws JsonProcessingException {
+    public void registerTest() throws IOException {
+
         logger.info("Step 1 - Successful register");
         UserRegisterRequest userDataRequest =
                 new UserRegisterRequest(USERNAME, PASSWORD);
 
         Response response = userCommandsService.registerNewUser(userDataRequest);
         Assert.assertEquals(response.statusCode(), 200);
+        ReportSaver.saveFullApiLog(testName, testId, "step1_response", response.headers().asList().toString(), response.body().asString(), response.getStatusCode());
 
         logger.info("Step 2 - UnSuccessful register");
         userDataRequest =
