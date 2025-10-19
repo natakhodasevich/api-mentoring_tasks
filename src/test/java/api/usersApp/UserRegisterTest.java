@@ -8,22 +8,19 @@ import api.usersApp.commands.service.UserCommandsService;
 import static core.utils.PropertiesLoader.getPropertyByKey;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import core.ReportSaver;
+import core.ApiTestContext;
 import io.restassured.response.Response;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
 
-public class UserRegisterSuccessTest extends BaseTest {
+public class UserRegisterTest extends BaseTest {
 
     private static final String USERNAME = getPropertyByKey("VALID_USERNAME");
     private static final String PASSWORD = getPropertyByKey("VALID_PASSWORD");
     private static final String INVALID_USERNAME = getPropertyByKey("INVALID_USERNAME");
-    private static final Logger logger = LoggerFactory.getLogger(UserRegisterSuccessTest.class);
     private UserCommandsService userCommandsService;
 
     @BeforeMethod
@@ -34,15 +31,14 @@ public class UserRegisterSuccessTest extends BaseTest {
     @Test
     public void registerTest() throws IOException {
 
-        logger.info("Step 1 - Successful register");
+        ApiTestContext.setStepName("step1");
         UserRegisterRequest userDataRequest =
                 new UserRegisterRequest(USERNAME, PASSWORD);
 
         Response response = userCommandsService.registerNewUser(userDataRequest);
         Assert.assertEquals(response.statusCode(), 200);
-        ReportSaver.saveFullApiLog(testName, testId, "step1_response", response.headers().asList().toString(), response.body().asString(), response.getStatusCode());
 
-        logger.info("Step 2 - UnSuccessful register");
+        ApiTestContext.setStepName("step2");
         userDataRequest =
                 new UserRegisterRequest(INVALID_USERNAME, "");
         response = userCommandsService.registerNewUser(userDataRequest);

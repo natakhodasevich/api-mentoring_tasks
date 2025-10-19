@@ -24,22 +24,4 @@ public class ReportSaver {
             writer.write(content);
         }
     }
-//TODO figure how to log request content
-    public static void saveFullApiLog(String testName, String testId, String stepName /*String method, String url,
-                                      String requestHeaders, String requestBody*/, String responseHeaders, String responseBody,int statusCodeResponse) throws IOException {
-        StringBuilder logBuilder = new StringBuilder();
-
-//        logBuilder.append("=== REQUEST ===\n");
-//        logBuilder.append("Method: ").append(method).append("\n");
-//        logBuilder.append("URL: ").append(url).append("\n");
-//        logBuilder.append("Headers: ").append(requestHeaders).append("\n");
-//        logBuilder.append("Body: ").append(requestBody).append("\n\n");
-
-        logBuilder.append("=== RESPONSE ===\n");
-        logBuilder.append("Status Code: ").append(statusCodeResponse).append("\n");
-        logBuilder.append("Headers: ").append(responseHeaders).append("\n");
-        logBuilder.append("Body: ").append(responseBody).append("\n");
-
-        saveLogs(testName, testId, stepName + "_api_log", logBuilder.toString());
-    }
 }
