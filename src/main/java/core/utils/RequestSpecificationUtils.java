@@ -1,6 +1,6 @@
 package core.utils;
 
-import core.RequestResponseLoggingFilter;
+import core.logging.RequestResponseLoggingFilter;
 import core.authentication.AuthorizationFilter;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;

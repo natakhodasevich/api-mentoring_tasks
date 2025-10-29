@@ -2,7 +2,7 @@ package api.usersApp;
 
 import api.BaseTest;
 import api.usersApp.extendedProperties.service.UserExtendedPropertiesService;
-import core.ApiTestContext;
+import core.logging.ApiTestContext;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;

@@ -1,6 +1,6 @@
 package api;
 
-import core.ApiTestContext;
+import core.logging.ApiTestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.BeforeMethod;
 

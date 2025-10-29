@@ -7,7 +7,7 @@ import api.usersApp.commands.service.UserCommandsService;
 
 import static core.utils.PropertiesLoader.getPropertyByKey;
 
-import core.ApiTestContext;
+import core.logging.ApiTestContext;
 import core.utils.SerializationUtil;
 import io.restassured.response.Response;
 import org.testng.Assert;

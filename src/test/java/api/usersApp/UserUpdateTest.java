@@ -4,7 +4,7 @@ import api.BaseTest;
 import api.usersApp.extendedProperties.models.UserTime;
 import api.usersApp.extendedProperties.models.UserTimeResponse;
 import api.usersApp.extendedProperties.service.UserExtendedPropertiesService;
-import core.ApiTestContext;
+import core.logging.ApiTestContext;
 import core.utils.SerializationUtil;
 import io.restassured.response.Response;
 import org.testng.Assert;

@@ -1,4 +1,4 @@
-package core;
+package core.logging;
 
 import io.restassured.filter.Filter;
 import io.restassured.filter.FilterContext;
@@ -42,7 +42,7 @@ public class RequestResponseLoggingFilter implements Filter {
             ReportSaver.saveLogs(testName, testId, stepName + "_response", responseLog.toString());
 
         } catch (IOException e) {
-            e.printStackTrace(); // Или логгер
+            e.printStackTrace();
         }
 
         return response;

@@ -1,4 +1,4 @@
-package core;
+package core.logging;
 
 import java.io.File;
 import java.io.FileWriter;
