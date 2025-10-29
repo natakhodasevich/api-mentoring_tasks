@@ -7,14 +7,12 @@ import api.usersApp.commands.service.UserCommandsService;
 
 import static core.utils.PropertiesLoader.getPropertyByKey;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import core.ApiTestContext;
+import core.utils.SerializationUtil;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
-import java.io.IOException;
 
 public class UserRegisterTest extends BaseTest {
 
@@ -29,7 +27,7 @@ public class UserRegisterTest extends BaseTest {
     }
 
     @Test
-    public void registerTest() throws IOException {
+    public void registerTest() {
 
         ApiTestContext.setStepName("step1");
         UserRegisterRequest userDataRequest =
@@ -43,9 +41,7 @@ public class UserRegisterTest extends BaseTest {
                 new UserRegisterRequest(INVALID_USERNAME, "");
         response = userCommandsService.registerNewUser(userDataRequest);
         Assert.assertEquals(response.statusCode(), 400);
-
-        ObjectMapper mapper = new ObjectMapper();
-        UnSuccessUserRegisterResponse unSuccessUserRegisterResponse = mapper.readValue(response.getBody().asString(), UnSuccessUserRegisterResponse.class);
+        var unSuccessUserRegisterResponse = SerializationUtil.asObject(response.getBody().asString(), UnSuccessUserRegisterResponse.class);
         String expectedError = getPropertyByKey("MISSING_PASSWORD_ERROR");
         Assert.assertEquals(unSuccessUserRegisterResponse.getError(), expectedError);
     }
