@@ -3,7 +3,6 @@ package core.utils;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import io.restassured.response.ValidatableResponse;
 import io.restassured.specification.RequestSpecification;
 
 import java.util.HashMap;
@@ -27,15 +26,6 @@ public class CommandSenderUtil {
                 .queryParams(params)
                 .when()
                 .post(endpoint).then().log().all().statusCode(200);
-    }
-
-    public static Response sendPutCommand(Object command, RequestSpecification requestSpecification, String endpoint) {
-        var jsonBody = SerializationUtil.asJsonString(command);
-        return RestAssured.given(requestSpecification)
-                .contentType(ContentType.JSON)
-                .body(jsonBody)
-                .when()
-                .put(endpoint);
     }
 
     public static <T> CommandSender<T> usingCommandSender() {
