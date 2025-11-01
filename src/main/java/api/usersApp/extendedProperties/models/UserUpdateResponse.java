@@ -1,16 +1,16 @@
 package api.usersApp.extendedProperties.models;
 
-public class UserTimeResponse extends UserTime {
+public class UserUpdateResponse extends UserUpdateRequest {
 
 
     private String updatedAt;
 
 
 
-    public UserTimeResponse() {
+    public UserUpdateResponse() {
     }
 
-    public UserTimeResponse(String updatedAt) {
+    public UserUpdateResponse(String updatedAt) {
     super();
         this.updatedAt = updatedAt;
     }

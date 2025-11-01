@@ -1,6 +1,6 @@
 package api.usersApp.extendedProperties.models;
 
-public class UserTime {
+public class UserUpdateRequest {
 
     private String name;
     private String job;
@@ -13,10 +13,10 @@ public class UserTime {
         this.name = name;
     }
 
-    public UserTime() {
+    public UserUpdateRequest() {
     }
 
-    public UserTime(String name, String job) {
+    public UserUpdateRequest(String name, String job) {
         this.name = name;
         this.job = job;
     }

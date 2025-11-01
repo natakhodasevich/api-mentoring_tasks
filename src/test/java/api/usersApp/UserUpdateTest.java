@@ -1,8 +1,8 @@
 package api.usersApp;
 
 import api.BaseTest;
-import api.usersApp.extendedProperties.models.UserTime;
-import api.usersApp.extendedProperties.models.UserTimeResponse;
+import api.usersApp.extendedProperties.models.UserUpdateRequest;
+import api.usersApp.extendedProperties.models.UserUpdateResponse;
 import api.usersApp.extendedProperties.service.UserExtendedPropertiesService;
 import core.logging.ApiTestContext;
 import core.utils.SerializationUtil;
@@ -29,10 +29,10 @@ public class UserUpdateTest extends BaseTest {
     @Test
     public void updateTest(){
         ApiTestContext.setStepName("step1");
-        UserTime userTime = new UserTime(USERNAME, PASSWORD);
+        UserUpdateRequest userTime = new UserUpdateRequest(USERNAME, PASSWORD);
 
         Response response = userExtendedPropertiesService.updateUser(userTime);
-        UserTimeResponse userTimeResponse = SerializationUtil.asObject(response.getBody().asString(), UserTimeResponse.class);
+        UserUpdateResponse userTimeResponse = SerializationUtil.asObject(response.getBody().asString(), UserUpdateResponse.class);
         String regex = "^(.{17}).*$";
         String currentTime = Clock.systemUTC().instant().toString().replaceAll(regex, "$1");
         String serverTime = userTimeResponse.getUpdatedAt().replaceAll(regex, "$1");
