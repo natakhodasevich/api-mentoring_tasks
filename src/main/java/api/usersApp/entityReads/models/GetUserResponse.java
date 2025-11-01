@@ -1,14 +1,14 @@
-package api;
+package api.usersApp.entityReads.models;
 
 public class GetUserResponse {
 
-    String id;
+    Integer id;
     String email;
     String first_name;
     String last_name;
     String avatar;
 
-    public GetUserResponse(String id, String email, String first_name, String last_name, String avatar) {
+    public GetUserResponse(Integer id, String email, String first_name, String last_name, String avatar) {
         this.id = id;
         this.email = email;
         this.first_name = first_name;
@@ -19,11 +19,11 @@ public class GetUserResponse {
     public GetUserResponse() {
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

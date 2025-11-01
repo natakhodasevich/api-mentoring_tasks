@@ -1,4 +1,4 @@
-package api;
+package api.usersApp.commands.models;
 
 public class UserCreateResponse {
 
