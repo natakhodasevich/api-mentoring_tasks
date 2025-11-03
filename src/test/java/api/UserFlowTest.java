@@ -24,6 +24,7 @@ public class UserFlowTest extends BaseTest {
     private static final String PASSWORD = getPropertyByKey("VALID_PASSWORD");
     private static final String USER_NAME = "morpheus";
     private static final String USER_JOB = "leader";
+    private static final String USER_LAST_NAME_AFTER_UPDATE = "zion resident";
     private static final org.slf4j.Logger logger = LoggerFactory.getLogger(UserFlowTest.class);
     private UserExtendedPropertiesService userExtendedPropertiesService;
     private UserCommandsService userCommandsService;
@@ -70,7 +71,7 @@ public class UserFlowTest extends BaseTest {
         ApiTestContext.setStepName("Step4");
         logger.info("Getting user after update");
         getUserResponse = userEntityReads.getUserByName(USER_NAME);
-        Assert.assertNotNull(getUserResponse.getId(), "User ID is null");
+        Assert.assertEquals(getUserResponse.getLast_name(), USER_LAST_NAME_AFTER_UPDATE);
 
         ApiTestContext.setStepName("Step5");
         logger.info("Deleting user");
