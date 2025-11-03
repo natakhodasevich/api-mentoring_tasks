@@ -7,7 +7,7 @@ import io.restassured.specification.RequestSpecification;
 
 import static core.properties.ApiProperties.*;
 
-public class RequestSpecificationUtils {
+public class RequestSpecificationUtil {
 
     public static RequestSpecification buildReqResApiRequestSpec() {
         String uri = getBaseUriReqRes();

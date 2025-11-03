@@ -5,8 +5,8 @@ import api.usersApp.commands.models.UserCreateRequest;
 import api.usersApp.commands.models.UserRegisterRequest;
 import io.restassured.response.Response;
 
-import static core.utils.CommandSenderUtil.sendCommand;
-import static core.utils.RequestSpecificationUtils.buildReqResApiRequestSpec;
+import static core.utils.CommandsUtil.sendCommand;
+import static core.utils.RequestSpecificationUtil.buildReqResApiRequestSpec;
 
 public class UserCommandsService {
 

@@ -9,9 +9,9 @@ import java.util.HashMap;
 
 import static io.restassured.RestAssured.given;
 
-public class CommandSenderUtil {
+public class CommandsUtil {
 
-    private CommandSenderUtil() {
+    private CommandsUtil() {
     }
 
     public static <T> Response sendCommand(T command, RequestSpecification requestSpecification, String endpoint) {

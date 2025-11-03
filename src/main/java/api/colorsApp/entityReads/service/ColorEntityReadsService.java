@@ -6,7 +6,7 @@ import api.colorsApp.entityReads.models.ColorDataResponse;
 import java.util.List;
 
 import static core.utils.PayloadEntityReadsUtil.PayloadEntityReader.givenEntityArrayType;
-import static core.utils.RequestSpecificationUtils.buildReqResApiRequestSpec;
+import static core.utils.RequestSpecificationUtil.buildReqResApiRequestSpec;
 
 public class ColorEntityReadsService {
 

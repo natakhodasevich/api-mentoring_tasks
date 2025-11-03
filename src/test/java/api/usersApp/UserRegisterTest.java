@@ -5,7 +5,7 @@ import api.usersApp.commands.models.UnSuccessUserRegisterResponse;
 import api.usersApp.commands.models.UserRegisterRequest;
 import api.usersApp.commands.service.UserCommandsService;
 
-import static core.utils.PropertiesLoader.getPropertyByKey;
+import static core.PropertiesLoader.getPropertyByKey;
 
 import core.logging.ApiTestContext;
 import core.utils.SerializationUtil;

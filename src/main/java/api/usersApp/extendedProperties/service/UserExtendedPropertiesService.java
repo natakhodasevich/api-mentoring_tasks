@@ -4,9 +4,9 @@ import api.usersApp.extendedProperties.UserExtendedPropertiesEndpoints;
 import api.usersApp.extendedProperties.models.UserUpdateRequest;
 import io.restassured.response.Response;
 
-import static core.utils.ExtendedPropertiesUtils.sendDeleteRequest;
-import static core.utils.ExtendedPropertiesUtils.sendPutRequest;
-import static core.utils.RequestSpecificationUtils.buildReqResApiRequestSpec;
+import static core.utils.ExtendedPropertiesUtil.sendDeleteRequest;
+import static core.utils.ExtendedPropertiesUtil.sendPutRequest;
+import static core.utils.RequestSpecificationUtil.buildReqResApiRequestSpec;
 
 public class UserExtendedPropertiesService {
 

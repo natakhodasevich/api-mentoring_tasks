@@ -4,7 +4,7 @@ import api.usersApp.entityReads.UserEntityReadsEndpoints;
 import api.usersApp.entityReads.models.GetUserResponse;
 import java.util.List;
 import static core.utils.PayloadEntityReadsUtil.PayloadEntityReader.givenEntityArrayType;
-import static core.utils.RequestSpecificationUtils.buildReqResApiRequestSpec;
+import static core.utils.RequestSpecificationUtil.buildReqResApiRequestSpec;
 
 public class UserEntityReadsService {
 

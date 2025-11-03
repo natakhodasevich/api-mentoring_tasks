@@ -7,7 +7,7 @@ import io.restassured.specification.RequestSpecification;
 
 import static io.restassured.RestAssured.given;
 
-public class ExtendedPropertiesUtils {
+public class ExtendedPropertiesUtil {
     public static Response sendDeleteRequest(RequestSpecification requestSpecification, String endpoint) {
         return given(requestSpecification)
                 .contentType(ContentType.JSON)

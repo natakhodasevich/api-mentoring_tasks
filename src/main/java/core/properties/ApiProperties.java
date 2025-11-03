@@ -1,6 +1,6 @@
 package core.properties;
 
-import static core.utils.PropertiesLoader.getPropertyByKey;
+import static core.PropertiesLoader.getPropertyByKey;
 import static core.utils.UrlUtil.resolveUri;
 
 public class ApiProperties {

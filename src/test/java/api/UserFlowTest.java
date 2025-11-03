@@ -17,7 +17,7 @@ import org.testng.annotations.Test;
 
 import java.time.Clock;
 
-import static core.utils.PropertiesLoader.getPropertyByKey;
+import static core.PropertiesLoader.getPropertyByKey;
 
 public class UserFlowTest extends BaseTest {
     private static final String USERNAME = getPropertyByKey("VALID_USERNAME");
@@ -76,5 +76,6 @@ public class UserFlowTest extends BaseTest {
         logger.info("Deleting user");
         Response deleteUserResponse = userExtendedPropertiesService.deleteUser();
         Assert.assertEquals(deleteUserResponse.statusCode(), 204);
+        Assert.assertNull(userEntityReads.getUserByName(USER_NAME));
     }
 }

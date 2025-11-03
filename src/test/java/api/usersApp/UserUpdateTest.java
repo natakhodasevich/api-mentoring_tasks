@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.time.Clock;
 
-import static core.utils.PropertiesLoader.getPropertyByKey;
+import static core.PropertiesLoader.getPropertyByKey;
 
 public class UserUpdateTest extends BaseTest {
 
