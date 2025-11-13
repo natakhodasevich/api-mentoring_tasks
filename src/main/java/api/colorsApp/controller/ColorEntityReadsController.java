@@ -2,6 +2,7 @@ package api.colorsApp.controller;
 
 import api.colorsApp.model.ColorDataResponseModel;
 import api.colorsApp.service.ColorEntityReadsService;
+import io.qameta.allure.Step;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ public class ColorEntityReadsController {
      *
      * @return a list of strings representing the name of each color
      */
+    @Step("Getting color names")
     public List<String> getAllColorNamesFromColors() {
         List<ColorDataResponseModel> colors = colorEntityReadsService.getAllColors();
         return colors.stream().map(ColorDataResponseModel::getColor).toList();
@@ -33,6 +35,7 @@ public class ColorEntityReadsController {
      *
      * @return a list of strings representing the Pantone value of each color
      */
+    @Step("Getting all color values")
     public List<String> getAllPantoneValuesFromColors() {
         List<ColorDataResponseModel> colors = colorEntityReadsService.getAllColors();
         return colors.stream().map(ColorDataResponseModel::getPantone_value).toList();

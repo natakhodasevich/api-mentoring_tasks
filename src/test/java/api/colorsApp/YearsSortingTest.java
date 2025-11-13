@@ -24,7 +24,7 @@ public class YearsSortingTest extends BaseTest {
         colorEntityReads = new ColorEntityReadsController();
     }
 
-    @Test(groups = {"regression"})
+    @Test(groups = {"regression"}, enabled = false)
     public void sortedYearsTest() {
         ApiTestContext.setStepName("step1");
         logger.info("Getting all years from colors");

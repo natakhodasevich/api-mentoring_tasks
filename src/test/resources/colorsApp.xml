@@ -8,6 +8,7 @@
             <class name="api.colorsApp.ColorNamePatternTest"/>
             <class name="api.colorsApp.ColorPantoneValuePatternTest"/>
             <class name="api.colorsApp.YearsSortingTest"/>
+            <class name="api.colorsApp.ColorsTestAllure"/>
         </classes>
     </test>
 </suite>

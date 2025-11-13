@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 import static org.testng.Assert.*;
+
 @Listeners({AllureTestNg.class})
 @Epic("Colors")
 @Feature("Color Values")
@@ -25,7 +26,7 @@ public class ColorPantoneValuePatternTest extends BaseTest {
     }
 
 
-    @Test(groups = {"regression"})
+    @Test(groups = {"regression"}, enabled = false)
     public void checkPantoneValuePattern() {
         ApiTestContext.setStepName("step1");
         logger.info("Get all pantone values");
