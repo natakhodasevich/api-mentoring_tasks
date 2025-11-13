@@ -1,4 +1,4 @@
-package api.colorsApp.entityReads;
+package api.colorsApp.constants;
 
 public class ColorEndpoints {
 

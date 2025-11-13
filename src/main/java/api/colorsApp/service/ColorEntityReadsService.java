@@ -1,4 +1,7 @@
-package api.colorsApp.entityReads;
+package api.colorsApp.service;
+
+import api.colorsApp.constants.ColorEndpoints;
+import api.colorsApp.model.ColorDataResponseModel;
 
 import java.util.List;
 

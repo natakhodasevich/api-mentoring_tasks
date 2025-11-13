@@ -1,4 +1,7 @@
-package api.colorsApp.entityReads;
+package api.colorsApp.controller;
+
+import api.colorsApp.model.ColorDataResponseModel;
+import api.colorsApp.service.ColorEntityReadsService;
 
 import java.util.List;
 

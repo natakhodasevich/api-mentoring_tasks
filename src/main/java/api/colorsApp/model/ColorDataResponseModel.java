@@ -1,4 +1,4 @@
-package api.colorsApp.entityReads;
+package api.colorsApp.model;
 
 public class ColorDataResponseModel {
     private int id;

@@ -1,7 +1,7 @@
 package api.colorsApp;
 
 import api.BaseTest;
-import api.colorsApp.entityReads.ColorEntityReadsController;
+import api.colorsApp.controller.ColorEntityReadsController;
 import core.logging.ApiTestContext;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
