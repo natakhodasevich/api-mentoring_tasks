@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Colors Test Suite" parallel="false">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test name="Color Tests">
+        <classes>
+            <class name="api.colorsApp.ColorNamePatternTest"/>
+            <class name="api.colorsApp.ColorPantoneValuePatternTest"/>
+            <class name="api.colorsApp.YearsSortingTest"/>
+        </classes>
+    </test>
+</suite>

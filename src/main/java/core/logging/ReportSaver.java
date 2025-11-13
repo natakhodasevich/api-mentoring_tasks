@@ -9,7 +9,7 @@ public class ReportSaver {
     private static final String REPORTS_DIR = "reports";
 
     public static void saveLogs(String testName, String testId, String filePrefix, String content) throws IOException {
-        String testDirName = testName + testId;
+        String testDirName = testId + testName;
         saveToFile(testDirName, filePrefix + ".txt", content);
     }
 

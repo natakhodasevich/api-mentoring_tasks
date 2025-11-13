@@ -10,10 +10,22 @@ import static core.utils.RequestSpecificationUtil.buildReqResApiRequestSpec;
 
 public class UserCommandsService {
 
-    public Response registerNewUser(UserRegisterRequest command) {
+    /**
+     * Registers a user via the API.
+     *
+     * @param command the registration details
+     * @return the API response
+     */
+    public Response registerUser(UserRegisterRequest command) {
         return sendCommand(command, buildReqResApiRequestSpec(), UserCommandsEndpoints.REGISTER_USER);
     }
 
+    /**
+     * Creates a new user via the API.
+     *
+     * @param command the user creation details
+     * @return the API response
+     */
     public Response createNewUser(UserCreateRequest command) {
         return sendCommand(command, buildReqResApiRequestSpec(), UserCommandsEndpoints.CREATE_USER);
     }

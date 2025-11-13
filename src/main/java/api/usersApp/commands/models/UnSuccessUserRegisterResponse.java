@@ -1,7 +1,10 @@
 package api.usersApp.commands.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class UnSuccessUserRegisterResponse {
 
+    @JsonProperty("error")
     String error;
 
     public UnSuccessUserRegisterResponse() {

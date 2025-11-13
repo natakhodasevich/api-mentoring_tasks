@@ -8,6 +8,15 @@ import static core.utils.RequestSpecificationUtil.buildReqResApiRequestSpec;
 
 public class UserEntityReadsService {
 
+    /**
+     * Retrieves all users from the API.
+     * <p>
+     * Sends a GET request and
+     * maps the JSON array under the "data" field to a list of {@link GetUserResponse}.
+     * </p>
+     *
+     * @return a list of {@link GetUserResponse} representing all users
+     */
     public List<GetUserResponse> getAllUsers() {
         return givenEntityArrayType(GetUserResponse[].class)
                 .withRequestSpecification(buildReqResApiRequestSpec())

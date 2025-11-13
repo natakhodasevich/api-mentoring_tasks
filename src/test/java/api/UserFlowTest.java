@@ -37,7 +37,7 @@ public class UserFlowTest extends BaseTest {
         userCommandsService = new UserCommandsService();
     }
 
-    @Test
+    @Test(groups = {"smoke"})
     public void userFlowTest() {
 
         ApiTestContext.setStepName("Step1");

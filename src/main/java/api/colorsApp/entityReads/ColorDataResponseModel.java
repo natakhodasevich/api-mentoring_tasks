@@ -1,18 +1,16 @@
-package api.colorsApp.entityReads.models;
+package api.colorsApp.entityReads;
 
-public class ColorDataResponse {
+public class ColorDataResponseModel {
     private int id;
     private String name;
     private int year;
     private String color;
     private String pantone_value;
 
-
-    public ColorDataResponse() {
-
+    public ColorDataResponseModel() {
     }
 
-    public ColorDataResponse(int id, String name, int year, String color, String pantone_value) {
+    public ColorDataResponseModel(int id, String name, int year, String color, String pantone_value) {
         this.id = id;
         this.name = name;
         this.year = year;
